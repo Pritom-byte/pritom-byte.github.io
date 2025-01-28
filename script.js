@@ -43,16 +43,25 @@ document.addEventListener('mousemove', (e) => {
   particlesContainer.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
 });
 
-// Glow Effect on Buttons and Neon Boxes
-document.querySelectorAll('.btn-neon, .neon-box, .neon-link').forEach(element => {
-  element.addEventListener('mouseenter', () => {
+// Serialized RGB Wave Effect for Buttons
+const buttons = document.querySelectorAll('.btn-neon');
+let delay = 0;
+
+buttons.forEach((button, index) => {
+  button.style.animationDelay = `${delay}s`;
+  delay += 0.5; // Add delay for each button to create a wave effect
+});
+
+// Hover Effect for Buttons
+buttons.forEach(button => {
+  button.addEventListener('mouseenter', () => {
     cursor.classList.add('hover');
-    element.style.animation = 'rgb-glow 1.5s infinite alternate';
+    button.style.animationDuration = '1.5s'; // Faster animation on hover
   });
 
-  element.addEventListener('mouseleave', () => {
+  button.addEventListener('mouseleave', () => {
     cursor.classList.remove('hover');
-    element.style.animation = 'rgb-glow 3s infinite alternate';
+    button.style.animationDuration = '3s'; // Reset animation speed
   });
 });
   
