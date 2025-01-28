@@ -43,16 +43,16 @@ document.addEventListener('mousemove', (e) => {
   particlesContainer.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
 });
 
-// Glow Effect on Buttons
-document.querySelectorAll('.btn-neon, .neon-box').forEach(element => {
+// Glow Effect on Buttons and Neon Boxes
+document.querySelectorAll('.btn-neon, .neon-box, .neon-link').forEach(element => {
   element.addEventListener('mouseenter', () => {
     cursor.classList.add('hover');
-    element.style.boxShadow = '0 0 20px #00ff88, 0 0 40px #007bff';
+    element.style.animation = 'rgb-glow 1.5s infinite alternate';
   });
 
   element.addEventListener('mouseleave', () => {
     cursor.classList.remove('hover');
-    element.style.boxShadow = '0 0 10px #00ff88, 0 0 20px #007bff';
+    element.style.animation = 'rgb-glow 3s infinite alternate';
   });
 });
   
