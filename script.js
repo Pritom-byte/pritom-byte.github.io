@@ -28,21 +28,33 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
   
   // Custom Cursor
-  const cursor = document.querySelector('.cursor');
-  document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.pageX + 'px';
-    cursor.style.top = e.pageY + 'px';
+// Custom Cursor with Magnetic Effect
+const cursor = document.querySelector('.cursor');
+const particlesContainer = document.getElementById('particles-js');
+
+document.addEventListener('mousemove', (e) => {
+  // Move the custom cursor
+  cursor.style.left = e.pageX + 'px';
+  cursor.style.top = e.pageY + 'px';
+
+  // Magnetic effect on particles
+  const x = e.clientX / window.innerWidth;
+  const y = e.clientY / window.innerHeight;
+  particlesContainer.style.transform = `translate(${x * 20}px, ${y * 20}px)`;
+});
+
+// Glow Effect on Buttons
+document.querySelectorAll('.btn-neon, .neon-box').forEach(element => {
+  element.addEventListener('mouseenter', () => {
+    cursor.classList.add('hover');
+    element.style.boxShadow = '0 0 20px #00ff88, 0 0 40px #007bff';
   });
-  
-  // Hover effect for cursor
-  document.querySelectorAll('a, button, .neon-box').forEach(element => {
-    element.addEventListener('mouseenter', () => {
-      cursor.classList.add('hover');
-    });
-    element.addEventListener('mouseleave', () => {
-      cursor.classList.remove('hover');
-    });
+
+  element.addEventListener('mouseleave', () => {
+    cursor.classList.remove('hover');
+    element.style.boxShadow = '0 0 10px #00ff88, 0 0 20px #007bff';
   });
+});
   
   // Background interaction with cursor
   document.addEventListener('mousemove', (e) => {
