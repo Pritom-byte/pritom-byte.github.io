@@ -24,7 +24,22 @@ body {
     text-decoration: none;
     color: inherit;
   }
-  
+
+@keyframes rgb-glow {
+  0% {
+    box-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 30px #ff0080;
+  }
+  33% {
+    box-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88, 0 0 30px #00ff88;
+  }
+  66% {
+    box-shadow: 0 0 10px #007bff, 0 0 20px #007bff, 0 0 30px #007bff;
+  }
+  100% {
+    box-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080, 0 0 30px #ff0080;
+  }
+}
+
   .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -33,11 +48,12 @@ body {
   }
   
   .btn-neon {
-    background: linear-gradient(45deg, #00ff88, #007bff);
-    color: #fff;
-    border: none;
-    box-shadow: 0 0 10px #00ff88, 0 0 20px #007bff;
-  }
+  background: linear-gradient(45deg, #00ff88, #007bff);
+  color: #fff;
+  border: none;
+  animation: rgb-glow 3s infinite alternate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
   
   .btn-neon:hover {
     transform: scale(1.05);
@@ -46,24 +62,26 @@ body {
   
   /* Neon Text */
   .neon-text {
-    text-shadow: 0 0 5px #00ff88, 0 0 10px #007bff;
-  }
+  text-shadow: 0 0 5px #00ff88, 0 0 10px #007bff;
+  animation: rgb-glow 3s infinite alternate;
+}
   
   .neon-link {
-    transition: text-shadow 0.3s ease;
-  }
+  transition: text-shadow 0.3s ease;
+  animation: rgb-glow 3s infinite alternate;
+}
   
   .neon-link:hover {
-    text-shadow: 0 0 5px #00ff88, 0 0 10px #007bff;
-  }
+  text-shadow: 0 0 5px #00ff88, 0 0 10px #007bff;
+}
   
   /* Neon Box */
   .neon-box {
-    border: 2px solid #00ff88;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #00ff88, 0 0 20px #007bff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+  border: 2px solid #00ff88;
+  border-radius: 10px;
+  animation: rgb-glow 3s infinite alternate;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
   
   .neon-box:hover {
     transform: translateY(-10px);
@@ -89,22 +107,23 @@ body {
   
   /* Custom Cursor */
   .cursor {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #00ff88;
-    border-radius: 50%;
-    position: absolute;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
-    z-index: 1000;
-  }
+  width: 20px;
+  height: 20px;
+  border: 2px solid #00ff88;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
+  z-index: 1000;
+  animation: rgb-glow 3s infinite alternate;
+}
   
   .cursor.hover {
-    width: 40px;
-    height: 40px;
-    background: rgba(0, 255, 136, 0.2);
-  }
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 255, 136, 0.2);
+}
   
   /* Header */
   header {
