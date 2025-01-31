@@ -8,7 +8,7 @@
       }
     },
     "color": {
-      "value": "#00ff88" // Single color for particles
+      "value": "#00ff88"
     },
     "shape": {
       "type": "circle"
