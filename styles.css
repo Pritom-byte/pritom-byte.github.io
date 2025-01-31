@@ -93,6 +93,17 @@ header nav ul li a:hover {
   text-align: center;
   background: linear-gradient(135deg, #007bff, #00ff88);
   color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .hero-text {
@@ -171,4 +182,82 @@ header nav ul li a:hover {
 }
 
 .work-item:hover .work-img {
-  transform: scale
+  transform: scale(1.1);
+}
+
+.work-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.work-item:hover .work-overlay {
+  opacity: 1;
+}
+
+.work-overlay h3 {
+  color: #fff;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.work-overlay p {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Contact */
+#contact {
+  background: #f4f4f4;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.contact-form button {
+  width: 100%;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-link {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #007bff;
+}
