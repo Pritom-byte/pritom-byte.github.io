@@ -1,22 +1,7 @@
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
-
-// Initialize Particle.js
-particlesJS.load('particles-js', 'particles.json', function() {
-  console.log('Particles.js loaded!');
-});
-
 // GSAP Animations
-gsap.from('#hero h2', { opacity: 0, y: -50, duration: 1, delay: 0.5 });
-gsap.from('#hero p', { opacity: 0, y: 50, duration: 1, delay: 1 });
-gsap.from('.btn-neon', { opacity: 0, scale: 0.5, duration: 1, delay: 1.5 });
+gsap.from('.hero-text', { opacity: 0, y: -50, duration: 1, delay: 0.5 });
+gsap.from('.hero-subtext', { opacity: 0, y: 50, duration: 1, delay: 1 });
+gsap.from('.btn-primary', { opacity: 0, scale: 0.5, duration: 1, delay: 1.5 });
 
 // ScrollTrigger Animations
 gsap.utils.toArray('section').forEach((section) => {
@@ -27,19 +12,20 @@ gsap.utils.toArray('section').forEach((section) => {
   });
 });
 
-// Custom Cursor
-const cursor = document.querySelector('.cursor');
-document.addEventListener('mousemove', (e) => {
-  cursor.style.left = e.pageX + 'px';
-  cursor.style.top = e.pageY + 'px';
+// Initialize Particle.js
+particlesJS.load('particles-js', 'particles.json', function() {
+  console.log('Particles.js loaded!');
 });
 
-// Hover effect for cursor
-document.querySelectorAll('a, button, .neon-box').forEach(element => {
-  element.addEventListener('mouseenter', () => {
-    cursor.classList.add('hover');
+// Interactive Hover Effects
+document.querySelectorAll('.work-item').forEach((item) => {
+  item.addEventListener('mouseenter', () => {
+    gsap.to(item.querySelector('.work-overlay'), { opacity: 1, duration: 0.3 });
+    gsap.to(item.querySelector('.work-img'), { scale: 1.1, duration: 0.3 });
   });
-  element.addEventListener('mouseleave', () => {
-    cursor.classList.remove('hover');
+
+  item.addEventListener('mouseleave', () => {
+    gsap.to(item.querySelector('.work-overlay'), { opacity: 0, duration: 0.3 });
+    gsap.to(item.querySelector('.work-img'), { scale: 1, duration: 0.3 });
   });
 });
