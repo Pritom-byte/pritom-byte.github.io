@@ -1,54 +1,82 @@
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
-
-// Initialize Particle.js
-particlesJS.load('particles-js', 'particles.json', function() {
-  console.log('Particles.js loaded!');
-});
-
-// GSAP Animations
-gsap.from('#hero h2', { opacity: 0, y: -50, duration: 1, delay: 0.5 });
-gsap.from('#hero p', { opacity: 0, y: 50, duration: 1, delay: 1 });
-gsap.from('.btn-neon', { opacity: 0, scale: 0.5, duration: 1, delay: 1.5 });
-
-// ScrollTrigger Animations
-gsap.utils.toArray('section').forEach((section) => {
-  ScrollTrigger.create({
-    trigger: section,
-    start: 'top 80%',
-    onEnter: () => section.classList.add('visible'),
-  });
-});
-
-// Custom Cursor
-const cursor = document.querySelector('.cursor');
-document.addEventListener('mousemove', (e) => {
-  cursor.style.left = e.pageX + 'px';
-  cursor.style.top = e.pageY + 'px';
-});
-
-// Hover effect for cursor
-document.querySelectorAll('a, button, .neon-box').forEach(element => {
-  element.addEventListener('mouseenter', () => {
-    cursor.classList.add('hover');
-  });
-  element.addEventListener('mouseleave', () => {
-    cursor.classList.remove('hover');
-  });
-});
-
-// Serialized RGB Wave Effect for Buttons
-const buttons = document.querySelectorAll('.btn-neon');
-let delay = 0;
-
-buttons.forEach((button, index) => {
-  button.style.animationDelay = `${delay}s`;
-  delay += 0.5; // Add delay for each button to create a wave effect
-});
+{
+  "particles": {
+    "number": {
+      "value": 100,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#00ff88"
+    },
+    "shape": {
+      "type": "circle"
+    },
+    "opacity": {
+      "value": 0.7,
+      "random": true,
+      "anim": {
+        "enable": true,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": true,
+        "speed": 2,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#00ff88",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 6,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": false,
+      "attract": {
+        "enable": true,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "repulse"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "repulse": {
+        "distance": 100,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      }
+    }
+  },
+  "retina_detect": true
+}
