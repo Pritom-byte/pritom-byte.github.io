@@ -75,6 +75,11 @@
       },
       "push": {
         "particles_nb": 4
+      },
+      "attract": {
+        "distance": 200,
+        "duration": 0.4,
+        "speed": 1
       }
     }
   },
