@@ -1,10 +1,4 @@
-// Theme Switcher
-const themeToggle = document.getElementById('theme-toggle');
-themeToggle.addEventListener('change', () => {
-  document.body.classList.toggle('light-theme');
-});
-
-// Smooth Scrolling
+// Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -12,6 +6,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       behavior: 'smooth'
     });
   });
+});
+
+// Initialize Particle.js
+particlesJS.load('particles-js', 'particles.json', function() {
+  console.log('Particles.js loaded!');
 });
 
 // GSAP Animations
@@ -28,7 +27,19 @@ gsap.utils.toArray('section').forEach((section) => {
   });
 });
 
-// Initialize Particle.js
-particlesJS.load('particles-js', 'particles.json', function() {
-  console.log('Particles.js loaded!');
+// Custom Cursor
+const cursor = document.querySelector('.cursor');
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.pageX + 'px';
+  cursor.style.top = e.pageY + 'px';
+});
+
+// Hover effect for cursor
+document.querySelectorAll('a, button, .neon-box').forEach(element => {
+  element.addEventListener('mouseenter', () => {
+    cursor.classList.add('hover');
+  });
+  element.addEventListener('mouseleave', () => {
+    cursor.classList.remove('hover');
+  });
 });
