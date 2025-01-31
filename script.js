@@ -42,3 +42,22 @@ document.addEventListener('mousemove', (e) => {
   particlesJS.interactivity.particles.move.attract.rotateX = cursor.x;
   particlesJS.interactivity.particles.move.attract.rotateY = cursor.y;
 });
+// Custom Cursor
+const cursor = document.querySelector('.cursor');
+
+// Move the cursor with the mouse
+document.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.pageX + 'px'; // Update cursor X position
+  cursor.style.top = e.pageY + 'px'; // Update cursor Y position
+});
+
+// Add hover effect to interactive elements
+document.querySelectorAll('a, button, .work-item').forEach((element) => {
+  element.addEventListener('mouseenter', () => {
+    cursor.classList.add('hover'); // Add hover class
+  });
+
+  element.addEventListener('mouseleave', () => {
+    cursor.classList.remove('hover'); // Remove hover class
+  });
+});
