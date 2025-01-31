@@ -17,7 +17,7 @@ particlesJS.load('particles-js', 'particles.json', function() {
   console.log('Particles.js loaded!');
 });
 
-// Interactive Hover Effects
+// Interactive Hover Effects for Work Items
 document.querySelectorAll('.work-item').forEach((item) => {
   item.addEventListener('mouseenter', () => {
     gsap.to(item.querySelector('.work-overlay'), { opacity: 1, duration: 0.3 });
@@ -28,4 +28,17 @@ document.querySelectorAll('.work-item').forEach((item) => {
     gsap.to(item.querySelector('.work-overlay'), { opacity: 0, duration: 0.3 });
     gsap.to(item.querySelector('.work-img'), { scale: 1, duration: 0.3 });
   });
+});
+
+// Cursor Interaction with Particles
+const cursor = { x: 0, y: 0 };
+
+document.addEventListener('mousemove', (e) => {
+  cursor.x = e.clientX;
+  cursor.y = e.clientY;
+
+  // Update particle interaction
+  particlesJS.interactivity.particles.move.attract.enable = true;
+  particlesJS.interactivity.particles.move.attract.rotateX = cursor.x;
+  particlesJS.interactivity.particles.move.attract.rotateY = cursor.y;
 });
