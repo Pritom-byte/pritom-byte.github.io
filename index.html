@@ -3,181 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name - Professional Portfolio</title>
+  <title>Your Name - Neon Portfolio</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <!-- Theme Switcher -->
-  <div class="theme-switcher">
-    <input type="checkbox" id="theme-toggle">
-    <label for="theme-toggle" class="theme-toggle-label"></label>
-  </div>
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
 
-  <!-- Sidebar Navigation -->
-  <aside class="sidebar">
-    <div class="sidebar-content">
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
       <h1 class="neon-text">Your Name</h1>
       <nav>
         <ul>
           <li><a href="#about" class="neon-link">About</a></li>
           <li><a href="#skills" class="neon-link">Skills</a></li>
           <li><a href="#projects" class="neon-link">Projects</a></li>
-          <li><a href="#experience" class="neon-link">Experience</a></li>
-          <li><a href="#testimonials" class="neon-link">Testimonials</a></li>
           <li><a href="#contact" class="neon-link">Contact</a></li>
-          <li><a href="#blog" class="neon-link">Blog</a></li>
         </ul>
       </nav>
     </div>
-  </aside>
+  </header>
 
-  <!-- Main Content -->
-  <main>
-    <!-- Hero Section -->
-    <section id="hero" class="parallax">
-      <div class="container">
-        <h2 class="neon-text">Full-Stack Developer</h2>
-        <p class="neon-text">Crafting the future, one line of code at a time.</p>
-        <a href="#projects" class="btn btn-neon">View My Work</a>
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="container">
+      <h2 class="neon-text">Full-Stack Developer</h2>
+      <p class="neon-text">Crafting the future, one line of code at a time.</p>
+      <a href="#projects" class="btn btn-neon">View My Work</a>
+    </div>
+  </section>
+
+  <!-- About Me -->
+  <section id="about">
+    <div class="container">
+      <h2 class="neon-text">About Me</h2>
+      <div class="about-content">
+        <img src="profile.jpg" alt="Your Name" class="neon-border">
+        <p class="neon-text">
+          Hi, I'm [Your Name], a full-stack developer with a passion for building sleek, modern web applications. I specialize in React, Node.js, and cloud technologies. When I'm not coding, I’m exploring the latest in tech or contributing to open-source projects.
+        </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- About Me -->
-    <section id="about">
-      <div class="container">
-        <h2 class="neon-text">About Me</h2>
-        <div class="about-content">
-          <img src="profile.jpg" alt="Your Name" class="neon-border">
-          <p class="neon-text">
-            Hi, I'm [Your Name], a full-stack developer with a passion for building sleek, modern web applications. I specialize in React, Node.js, and cloud technologies. When I'm not coding, I’m exploring the latest in tech or contributing to open-source projects.
-          </p>
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="neon-text">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill neon-box">
+          <i class="fab fa-html5 neon-icon"></i>
+          <p>HTML</p>
+        </div>
+        <div class="skill neon-box">
+          <i class="fab fa-css3-alt neon-icon"></i>
+          <p>CSS</p>
+        </div>
+        <div class="skill neon-box">
+          <i class="fab fa-js neon-icon"></i>
+          <p>JavaScript</p>
+        </div>
+        <div class="skill neon-box">
+          <i class="fab fa-react neon-icon"></i>
+          <p>React</p>
+        </div>
+        <div class="skill neon-box">
+          <i class="fab fa-node neon-icon"></i>
+          <p>Node.js</p>
+        </div>
+        <div class="skill neon-box">
+          <i class="fab fa-git neon-icon"></i>
+          <p>Git</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Skills -->
-    <section id="skills">
-      <div class="container">
-        <h2 class="neon-text">Skills</h2>
-        <div class="skills-grid">
-          <div class="skill neon-box">
-            <i class="fab fa-html5 neon-icon"></i>
-            <p>HTML</p>
-          </div>
-          <div class="skill neon-box">
-            <i class="fab fa-css3-alt neon-icon"></i>
-            <p>CSS</p>
-          </div>
-          <div class="skill neon-box">
-            <i class="fab fa-js neon-icon"></i>
-            <p>JavaScript</p>
-          </div>
-          <div class="skill neon-box">
-            <i class="fab fa-react neon-icon"></i>
-            <p>React</p>
-          </div>
-          <div class="skill neon-box">
-            <i class="fab fa-node neon-icon"></i>
-            <p>Node.js</p>
-          </div>
-          <div class="skill neon-box">
-            <i class="fab fa-git neon-icon"></i>
-            <p>Git</p>
-          </div>
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="neon-text">Projects</h2>
+      <div class="projects-grid">
+        <div class="project neon-box">
+          <img src="project1.jpg" alt="Project 1" class="neon-border">
+          <h3>E-Commerce Platform</h3>
+          <p>Built with React, Node.js, and MongoDB. Features user authentication, product search, and payment integration.</p>
+          <a href="#" class="btn btn-neon">View Project</a>
+        </div>
+        <div class="project neon-box">
+          <img src="project2.jpg" alt="Project 2" class="neon-border">
+          <h3>Portfolio Website</h3>
+          <p>Built with HTML, CSS, and JavaScript. Features responsive design and smooth scrolling.</p>
+          <a href="#" class="btn btn-neon">View Project</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Projects -->
-    <section id="projects">
-      <div class="container">
-        <h2 class="neon-text">Projects</h2>
-        <div class="projects-carousel">
-          <div class="project neon-box">
-            <img src="project1.jpg" alt="Project 1" class="neon-border">
-            <h3>E-Commerce Platform</h3>
-            <p>Built with React, Node.js, and MongoDB. Features user authentication, product search, and payment integration.</p>
-            <a href="#" class="btn btn-neon">View Project</a>
-          </div>
-          <div class="project neon-box">
-            <img src="project2.jpg" alt="Project 2" class="neon-border">
-            <h3>Portfolio Website</h3>
-            <p>Built with HTML, CSS, and JavaScript. Features responsive design and smooth scrolling.</p>
-            <a href="#" class="btn btn-neon">View Project</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience">
-      <div class="container">
-        <h2 class="neon-text">Experience</h2>
-        <div class="timeline">
-          <div class="timeline-item neon-box">
-            <h3>Full-Stack Developer</h3>
-            <p>XYZ Company | Jan 2022 - Present</p>
-            <p>Developed and maintained web applications using React and Node.js.</p>
-          </div>
-          <div class="timeline-item neon-box">
-            <h3>Frontend Developer</h3>
-            <p>ABC Agency | Jun 2020 - Dec 2021</p>
-            <p>Built responsive and user-friendly interfaces using HTML, CSS, and JavaScript.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials">
-      <div class="container">
-        <h2 class="neon-text">Testimonials</h2>
-        <div class="testimonials-grid">
-          <div class="testimonial neon-box">
-            <p>"Your Name is an exceptional developer with a keen eye for detail."</p>
-            <p>- Client A</p>
-          </div>
-          <div class="testimonial neon-box">
-            <p>"Highly recommend Your Name for any web development project."</p>
-            <p>- Client B</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact">
-      <div class="container">
-        <h2 class="neon-text">Contact</h2>
-        <form action="#" method="post" class="neon-form">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <textarea name="message" placeholder="Your Message" required></textarea>
-          <button type="submit" class="btn btn-neon">Send Message</button>
-        </form>
-      </div>
-    </section>
-
-    <!-- Blog -->
-    <section id="blog">
-      <div class="container">
-        <h2 class="neon-text">Blog</h2>
-        <div class="blog-posts">
-          <div class="post neon-box">
-            <h3>Post Title 1</h3>
-            <p>Summary of the blog post.</p>
-            <a href="#" class="btn btn-neon">Read More</a>
-          </div>
-          <div class="post neon-box">
-            <h3>Post Title 2</h3>
-            <p>Summary of the blog post.</p>
-            <a href="#" class="btn btn-neon">Read More</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="neon-text">Contact</h2>
+      <form action="#" method="post" class="neon-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn btn-neon">Send Message</button>
+      </form>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>
